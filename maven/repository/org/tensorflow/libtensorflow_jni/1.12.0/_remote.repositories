@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Mar 20 16:51:16 CST 2019
+libtensorflow_jni-1.12.0.jar>nexus-aliyun=
+libtensorflow_jni-1.12.0.pom>nexus-aliyun=
