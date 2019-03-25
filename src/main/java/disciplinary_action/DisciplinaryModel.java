@@ -24,16 +24,28 @@ public class DisciplinaryModel {
 		 File directory = new File("");//参数为空
 		 String basePath =directory.getAbsolutePath();//绝对路径;
 		 String resourcePath = basePath+"/src/main/resources/";
-		 System.out.println(resourcePath+"disciplinary_model_0322");
-		 //实例化预测网络类
+		 //实例化预测网络类0321
 		NeuralNetworkModel neuralNetworkModel = new NeuralNetworkModel(
+				resourcePath+"disciplinary_model_0321",
+				resourcePath+"stopwords.txt",
+				resourcePath+"disciplinary_model_0321/vocab.txt",resourcePath+"categories.txt");
+		
+		 //实例化预测网络类0322 
+		NeuralNetworkModel neuralNetworkModel1 = new NeuralNetworkModel(
 				resourcePath+"disciplinary_model_0322",
 				resourcePath+"stopwords.txt",
-				resourcePath+"vocab.txt",resourcePath+"categories.txt");
-		String test_txt = "北京市昌平区崔村镇西辛峰村党支部组织党员公款旅游。2013年6月，西辛峰村党支部组织部分党员赴大连参观旅游，并给未参加的党员发放购物卡。昌平区纪委给予西辛峰村党支部书记王德全党内警告处分";
+				resourcePath+"disciplinary_model_0322/vocab.txt",resourcePath+"categories.txt");
+		
+		String test_txt = "违纪问题通报 2018年5月，浙江省嘉兴市秀洲区纪委就该区新城街道党工委原书记李荣伟履行全面从严治党主体责任不力、违反党的工作纪律问题进行通报。 经查，2012年2月至2016年12月，李荣伟（现任嘉兴市秀禾农业投资集团有限公司党委副书记）在担任嘉兴市秀洲区新城街道党工委书记期间，作为全面从严治党第一责任人，未对重点领域和关键岗位强化监管，疏于对党员干部的教育、管理和监督，对有违纪违法行为的干部未及时进行组织处理，在权力制约、预防腐败工作上履职不到位，履行全面从严治党主体责任不力，2017年12月，经嘉兴市秀洲区纪委常委会研究，决定给予李荣伟党内警告处分。 ●事件回顾 2016年4月，接群众举报，浙江省嘉兴市秀洲区纪委对新城街道办事处原副主任陈加明进行纪律审查；8月，陈加明受到开除党籍和开除处分，并被移送检察机关处理。 “拔出萝卜带出泥”。随后，新城街道创建办原主任万炳炎、城建办原副主任王荣根、社会事业所聘用人员朱培明等3人也因严重违纪问题接受区纪委的纪律审查。 经查，陈加明等4人的违纪违法行为主要发生在李荣伟担任党工委书记期间。其中，陈加明单独或伙同万炳炎、王荣根、朱培明等人，索取或收受他人财物共计价值64.38万元；万炳炎单独或伙同陈加明等人，索要或收受他人贿赂共计价值27.3万元；王荣根伙同陈加明等人索要或收受他人贿赂共计价值17万元；朱培明伙同陈加明收受贿赂共计价值24.9万元。2017年1月至10月，陈加明、万炳炎、朱培明、王荣根等4人因犯受贿罪先后被判刑。 在李荣伟担任书记的5年时间里，为什么会发生陈加明等4人的违纪违法问题？李荣伟在履行全面从严治党主体责任方面是否存在不作为等情况？对此，嘉兴市秀洲区纪委展开了调查。 ●查处经过 在对新城街道4起案件进行纪律审查时，调查人员发现了李荣伟在任职期间存在履行全面从严治党主体责任不力的问题线索。在经过缜密细致的初步核实后，2017年10月23日，区纪委决定对李荣伟涉嫌违纪问题予以立案审查。 随着调查的深入，李荣伟履行全面从严治党主体责任不力的违纪事实逐渐浮出水面…… 2015年上半年，新城街道对九里村土地综合整治工程项目进行发包，涉及工程量100多万元，中标单位是嘉兴市某建设有限公司，而这家公司的主要股东之一陈某恰好是陈加明的儿子；而该公司的技术负责人则是时任街道农技中心主任的万炳炎。 对于这么明显存在利益冲突的情况，当时作为该街道党工委书记的李荣伟没有进行深入调查了解，也没有要求街道纪工委对反映陈加明儿子参股的情况深入调查。据李荣伟交代，他主要还是碍于情面，当时整治项目的征迁工作任务重、难度大，又没有得力人选可以替代，所以就迁就他们，在大是大非问题上决断力、处置力不够。 2016年5月，时任新城街道城建办副主任的王荣根因涉嫌违纪问题向区纪委投案自首。直到2017年4月6日，王荣根才被街道党工委免去职务。 “当时我作为街道的一把手，对王荣根去投案的事情是清楚的，但这件事没有引起我的重视，未及时对其进行组织处理，导致其在初核调查期间仍然担任街道中层职务，这件事对整个街道工作氛围及选人用人导向都产生了不良影响。”李荣伟说。 经查，李荣伟身为党工委主要负责人、全面从严治党第一责任人，没有亲自部署和过问党风廉政建设工作，没有全面掌握街道的党风廉政建设情况，对于群众的信访举报也没有认真进行调查处置，特别是对陈加明、万炳炎等人出现了一些倾向性、苗头性的问题之后，没有进行相应的约谈，没有履行提醒告诫和加强监督约束的责任。4名下属严重违纪违法且构成犯罪的问题发生，与李荣伟的履职不到位有关，并造成严重不良影响。 “在作为‘班长’期间发生了系列腐败案件，我作为第一责任人肯定是脱不了干系的，在这个问题上我愿接受组织的任何处理……”李荣伟表示。 2017年12月，经嘉兴市秀洲区纪委常委会研究，决定给予李荣伟党内警告处分。";
+		//String test_txt = "公款旅游";
 		//调用预测方法获取违纪行为类别
-		Map<String, Object>result = neuralNetworkModel.getPredictResult(test_txt);
-		System.out.println(result.get("result"));
+		Map<String, Object>result = neuralNetworkModel.getPredictResult(test_txt,400);
+		//Map<String, Object>result = neuralNetworkModel1.getPredictResult(test_txt,600);
+		List<String>labels = (List<String>) result.get("result");
+		for(String r:labels) {
+			System.out.println(r);
+		}
+		
 	 }
 
 }
@@ -124,27 +136,28 @@ class NeuralNetworkModel{
 	/**
 	 * 预测违纪行为
 	 * @param content 输入文本内容
+	 * @param txt_length 模型要求的文本最大长度(0321要求400,0322要求600)
 	 * @return 标签预测结果
 	 */
-	public Map<String,Object>getPredictResult(String content){
+	public Map<String,Object>getPredictResult(String content,int txt_length){
 		//分词
 		List<String>words = Segmenter.segment(content);
 		//System.out.println(words);
 		//去停用词并将词汇转化成词id
 		List<Integer>inputIds = new ArrayList<Integer>();
 		for(int i=0;i<words.size();i++) {
-			if((i<400)&&(!this.stopwords.contains(words.get(i)))&&word2id.containsKey(words.get(i))) {
+			if((i<txt_length)&&(!this.stopwords.contains(words.get(i)))&&word2id.containsKey(words.get(i))) {
 				inputIds.add((Integer) word2id.get(words.get(i)));
 			}
 		}
 		int real_length = inputIds.size();
 		
-		int[][] inputs = new int[1][400];
+		int[][] inputs = new int[1][txt_length];
 		for(int i=0;i<real_length;i++) {
 			inputs[0][i] = inputIds.get(i);
 		}
 		//如果长度不足固定长度(400),则补0
-		for(int i=0;i<400-real_length;i++) {
+		for(int i=0;i<txt_length-real_length;i++) {
 			inputs[0][i+real_length] = (Integer) word2id.get("<PAD>");
 		}
 		
