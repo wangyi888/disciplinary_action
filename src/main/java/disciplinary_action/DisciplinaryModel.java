@@ -41,9 +41,9 @@ public class DisciplinaryModel {
 		//调用预测方法获取违纪行为类别
 		Map<String, Object>result = neuralNetworkModel.getPredictResult(test_txt,400);
 		//Map<String, Object>result = neuralNetworkModel1.getPredictResult(test_txt,600);
-		List<String>labels = (List<String>) result.get("result");
-		for(String r:labels) {
-			System.out.println(r);
+		List<Map<String, Object>>results = (List<Map<String, Object>>) result.get("result");
+		for(Map<String, Object> r:results) {
+			System.out.println("违纪行为:"+r.get("label").toString()+",概率:"+r.get("prob").toString());
 		}
 		
 	 }
@@ -168,23 +168,30 @@ class NeuralNetworkModel{
 		float[][] preds = new float[1][420];
 	    out.copyTo(preds);
 	    float[] pred = preds[0];
-	    List<String>labels = new ArrayList<String>();
+	    List<Map<String, Object>>results = new ArrayList<Map<String, Object>>();
 	    float max_pred = 0;
 	    int max_index = 0;
+	    
 	    for(int i=0;i<pred.length;i++) {
 	    	if(pred[i]>=0.5) {//获取概率超过0.5的类别
-	    		labels.add(this.id2label.get(i));
+	    		Map<String, Object>map = new HashMap<String, Object>();
+	    		map.put("label", this.id2label.get(i));//类别
+	    		map.put("prob", pred[i]);//相应概率
+	    		results.add(map);
 	    	}
 	    	if(pred[i]>max_pred) {
 	    		max_pred = pred[i];
 	    		max_index = i;
 	    	}
 	    }
-	    if(labels.size()<1) {//如果都概率没超过0.5,则取最大概率对应类别
-	    	labels.add(this.id2label.get(max_index));
+	    if(results.size()<1) {//如果都概率没超过0.5,则取最大概率对应类别
+	    	Map<String, Object>map = new HashMap<String, Object>();
+	    	map.put("label", this.id2label.get(max_index));
+	    	map.put("prob", max_pred);
+	    	results.add(map);
 	    }
 		Map<String, Object>result = new HashMap<String, Object>();
-		result.put("result", labels);
+		result.put("result", results);
 		return result;
 	}
 	
